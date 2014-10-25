@@ -1,14 +1,12 @@
 <h2><%= session[session[:current_dog]][:dog_name] %>'s profile</h2>
 
 <div>
-    <%session.each do |title, info| %>
-      <% if info.kind_of?(Hash) %>
-        <% if info.to_a.flatten.include?(session[:current_dog]) %>
-          <% info.each do |key, value| %>
-            <% formatted_title = key.to_s.split("_").join(" ").capitalize %>
-            <p><%= "#{formatted_title}: #{value}" %></p>
-          <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
+  <% session[session[:current_dog]].each do |key, value| %>
+    <% formatted_title = key.to_s.split("_").join(" ").capitalize %>
+    <p><%= "#{formatted_title}: #{value}" %></p>
+  <% end %>
 </div>
+
+<form action="/remove_dog" method="post">
+  <input type="submit" value="Remove Dog">
+</form>

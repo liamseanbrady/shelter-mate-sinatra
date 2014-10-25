@@ -1,4 +1,4 @@
-# Title
+# Shelter Mate - a practice app using Sinatra
 
 This is a **learning project**. I built this app as an exercise to further expose myself to the statelessness of HTTP. **Sinatra is used** in contrast to Rails because it is closer to the metal and therefore makes stateless nature of HTTP more clear. A **cookie is used as the model**, and allows for some persitence.
 
@@ -28,6 +28,7 @@ View the app live on Heroku [here](/)
 - **POST**
   - '/new_dog'
   - '/dogs'
+  - '/remove_dog'
 
 ### App flow
 
@@ -54,17 +55,27 @@ View the app live on Heroku [here](/)
 
 - All pages include a navigation bar which allows the player to view all dogs at any time.
 
-- There is currently no option to delete a dog.
-
 ### Edge cases
 
 - No name or ID number is entered for a new dog. No empty strings for either of these to be considered valid.
 
-###
+## Challenges
 
 Creating a unique form and button for each dog to go to the correct profile.
 
-The solution to this problem was...
+The solution to this problem was to create a form for each dog dynamically. This was difficult because there was other information in the cookie that I didn't want to parse out to a form:
+
+``` erb
+<%session.each do |title, info| %>
+  <% if info.kind_of?(Hash) %>
+    <% if info.to_a.flatten.include?(:dog_name) %>
+      <form action="/dogs" method="post">
+        <input type="submit" value=<%= info[:dog_name] %> name=<%= info[:dog_name] %> class="btn btn-primary">
+      </form>
+    <% end %>
+  <% end %>
+<% end %>
+```
 
 ## Notes
 
