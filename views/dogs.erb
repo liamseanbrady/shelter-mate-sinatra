@@ -1,0 +1,13 @@
+<h2>All of our doggies...</h2>
+
+<div>
+    <%session.each do |title, info| %>
+      <% if info.kind_of?(Hash) %>
+        <% if info.to_a.flatten.include?(:dog_name) %>
+          <form action="/dogs" method="post">
+            <input type="submit" value=<%= info[:dog_name] %> name=<%= info[:dog_name] %> class="btn btn-primary">
+          </form>
+        <% end %>
+      <% end %>
+    <% end %>
+</div>
