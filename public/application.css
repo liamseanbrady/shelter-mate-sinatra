@@ -4,7 +4,7 @@ textarea {
 }
 
 .btn {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 input {
@@ -14,4 +14,32 @@ input {
 .dog_info p {
   line-height: 1.5em;
   font-size: 1.4em;
+}
+
+.dog_button input {
+  background: none;
+  color: #777;
+  font-weight: 500;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+}
+
+.dog_button input:hover {
+  background: none;
+  color: #777;
+  font-weight: 500;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+}
+
+.dog_button input:active {
+  background: none;
+  color: #777;
+  font-weight: 500;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
+  outline: none;
 }

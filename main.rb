@@ -14,7 +14,7 @@ end
 
 post '/sign_in' do
   session[:shelter_name] = params[:shelter_name]
-  redirect '/new_dog'
+  redirect '/dogs'
 end
 
 get '/new_dog' do
@@ -56,6 +56,10 @@ post '/dogs' do
   session[:current_dog] = params.flatten.last
 
   redirect '/dog_profile'
+end
+
+post '/add_new_dog' do
+  redirect '/new_dog'
 end
 
 get '/dog_profile' do

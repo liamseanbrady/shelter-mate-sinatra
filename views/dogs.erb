@@ -4,10 +4,14 @@
     <%session.each do |title, info| %>
       <% if info.kind_of?(Hash) %>
         <% if info.to_a.flatten.include?(:dog_name) %>
-          <form action="/dogs" method="post">
+          <form action="/dogs" method="post" class="dog_button">
             <input type="submit" value=<%= info[:dog_name] %> name=<%= info[:dog_name] %> class="btn btn-primary">
           </form>
         <% end %>
       <% end %>
     <% end %>
 </div>
+
+<form action="/add_new_dog" method="post">
+  <input type="submit" value="Add new dog"class="btn btn-warning">
+</form>
