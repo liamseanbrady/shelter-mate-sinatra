@@ -4,7 +4,7 @@ This is a **learning project**. I built this app as an exercise to further expos
 
 ## Deployed at
 
-View the app live on Heroku [here](/)
+View the app live on Heroku [here](https://shelter-mate-app.herokuapp.com/)
 
 ## Skills Required
 
